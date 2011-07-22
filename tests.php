@@ -3,10 +3,15 @@
 printf("Welcome to the PHP unicode string test suite\n");
 printf("---\n\n");
 
+printf("mbstring.func_overload = %s\n", ini_get('mbstring.func_overload'));
+printf("---\n\n");
+
 test_for_unicode('hello my name is');
 test_for_unicode('רֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים the אֵ֥ת');
 test_for_unicode('ЯБГДЖЙЯБГДЖЙ');
 test_for_unicode('てすとてすとてすとてすとてすとてすと');
+test_for_unicode('٩(-̮̮̃-̃)۶ ٩(●̮̮̃•̃)۶ ٩(͡๏̯͡๏)۶ ٩(-̮̮̃•̃).');
+test_for_unicode("\xf0\x90\x8c\xbc\xf0\x90\x8c\xbc\xf0\x90\x8c\xbc");
 
 function test_for_unicode($str)
 {
